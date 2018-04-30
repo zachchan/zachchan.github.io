@@ -14,8 +14,10 @@ ga('create','UA-117097257-1','auto');ga('send','pageview');
 <p>如果，你经常使用一个目录作为你的根目录，那么，你可以通过CDPATH来指定你的cd根目录。 例如,我经常到/etc目录下，来対相应的文件进行配置。比如我想从我的家目录到/etc/nginx/目录下，一般的方法是:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/nginx/</span><br></pre></td></tr></table></figure></p>
 <p>懒人必备。 当然，你可以输入多个根路径，只要在每个路径下用:隔开<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> CDPATH=.:~:/etc:/var:</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<h2 id="技术2：在两个路径相互切换"><a href="#技术2：在两个路径相互切换" class="headerlink" title="####技术2：在两个路径相互切换"></a>####技术2：在两个路径相互切换</h2><p>当我们经常需要在一个terminal下，在两个路径之间，来回切换。这个时候，我们可以使用cd -,在两个路径之间“反复横跳”。<br>例如:第一个路径是<code>/etc/nginx/</code>，第二个路径是<code>~/project/</code>,我们先<code>cd /etc/nginx/</code>下，然后，再<code>cd ~/project/</code>。随后，当我们需要切换另一个路径只需要<code>cd -</code>就可以实现。</p>
-<h2 id="技术3：将路径通过栈的方式访问"><a href="#技术3：将路径通过栈的方式访问" class="headerlink" title="####技术3：将路径通过栈的方式访问"></a>####技术3：将路径通过栈的方式访问</h2><p>如果，遇到访问路径的过程像栈这种数据结构，那么我们可以用pushd来解决。 实现过程：</p>
+<h4 id="技术2：在两个路径相互切换"><a href="#技术2：在两个路径相互切换" class="headerlink" title="技术2：在两个路径相互切换"></a>技术2：在两个路径相互切换</h4><hr>
+<p>当我们经常需要在一个terminal下，在两个路径之间，来回切换。这个时候，我们可以使用cd -,在两个路径之间“反复横跳”。<br>例如:第一个路径是<code>/etc/nginx/</code>，第二个路径是<code>~/project/</code>,我们先<code>cd /etc/nginx/</code>下，然后，再<code>cd ~/project/</code>。随后，当我们需要切换另一个路径只需要<code>cd -</code>就可以实现。</p>
+<h4 id="技术3：将路径通过栈的方式访问"><a href="#技术3：将路径通过栈的方式访问" class="headerlink" title="技术3：将路径通过栈的方式访问"></a>技术3：将路径通过栈的方式访问</h4><hr>
+<p>如果，遇到访问路径的过程像栈这种数据结构，那么我们可以用pushd来解决。 实现过程：</p>
 <ol>
 <li>导航到相应的目录例如/tmp/push1</li>
 <li>使用pushd命令压入目录栈</li>
